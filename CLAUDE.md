@@ -13,7 +13,7 @@ To preview locally: `python3 -m http.server 8000` from the repo root, then open 
 ## Structure
 
 - `index.html` — all content, as one single-page layout: sticky nav → hero (bio, Google PhD Fellow badge, link buttons, photo) → Research interests → Publications → Awards & honors → footer. Nav links target section `id`s (`publications`, `awards`). The owner removed the News and Projects sections on purpose; don't re-add them unasked.
-- `stylesheet.css` — all styling. Colors are CSS custom properties on `:root`, redefined for dark mode both under `prefers-color-scheme: dark` (unless `data-theme="light"`) and under `:root[data-theme="dark"]`; the ◐ button in the nav sets `data-theme` and saves it to `localStorage`. Use the variables (`--fg`, `--muted`, `--accent`, …) rather than hard-coded colors so dark mode keeps working.
+- `stylesheet.css` — all styling. Colors are CSS custom properties on `:root`, redefined for dark mode both under `prefers-color-scheme: dark` (unless `data-theme="light"`) and under `:root[data-theme="dark"]`; the ◐ button in the nav sets `data-theme` and saves it to `localStorage`. Use the variables (`--fg`, `--muted`, `--accent`, …) rather than hard-coded colors so dark mode keeps working. `index.html` links it as `stylesheet.css?v=<date>`: bump that date whenever the CSS changes, or returning visitors' browsers will pair new HTML with a cached old stylesheet.
 - `images/` — publication thumbnails, profile photo (`insta_icml.jpeg`), `icc_steps.mp4` (BiRoDiff autoplay loop).
 - `data/gvsmothishcv.pdf` — the CV linked from the hero. Replace this file in place to update the CV.
 
